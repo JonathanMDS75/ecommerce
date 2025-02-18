@@ -1,8 +1,8 @@
 package com.senai.ecommerce.controllers;
 
-import com.senai.ecommerce.dtos.CategoryDTO;
-import com.senai.ecommerce.entities.Category;
-import com.senai.ecommerce.service.CategoryService;
+import com.senai.ecommerce.dtos.OrderDTO;
+import com.senai.ecommerce.entities.;
+import com.senai.ecommerce.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/categories") //localhost:8080/capi/category
-public class CategoryController {
+@RequestMapping("/s") //localhost:8080/capi/
+ public class Controller{
     @Autowired
-    private CategoryService categoryService;
+    private OrderService OrderService;
     @GetMapping
-    public ResponseEntity<List<CategoryDTO>> getAllCategory() {
-        List<CategoryDTO> list = categoryService.findAll();
+    public ResponseEntity<List<OrderDTO>> getAllOrder() {
+        List<OrderDTO> list = OrderService.findAll();
         return ResponseEntity.ok(list);
     }
 }
